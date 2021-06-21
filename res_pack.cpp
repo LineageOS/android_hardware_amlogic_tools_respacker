@@ -436,9 +436,6 @@ static int _img_pack(const char** const path_src, const char* const packedImg,
 {
         FILE *fd_src = NULL;
         FILE *fd_dest = NULL;
-        unsigned int pos = 0;
-        char file_path[MAX_PATH];
-        const char *filename = NULL;
         unsigned imageSz = 0;
         const unsigned BufSz = ITEM_READ_BUF_SZ;
         char* itemBuf = NULL;
@@ -477,7 +474,6 @@ static int _img_pack(const char** const path_src, const char* const packedImg,
         }
         imageSz += HeadLen; //Increase imageSz after pack each item
         AmlResItemHead_t*       pItemHeadInfo           = (AmlResItemHead_t*)(aAmlResImgHead + 1);
-        AmlResItemHead_t* const pFirstItemHeadInfo      = pItemHeadInfo;
 
         debugP("item num %d\n", totalItemNum);
         //for each loop: first create item header and pack it, second pack the item data
@@ -610,7 +606,6 @@ static const char * const doc = "Amlogic `imgpack v3' usage:\n\
 int main(int argc, const char ** const argv)
 {
         int ret = 0;
-        int c = 0;
         const char* opt = argv[1];
 
         if(argc < 3) {
