@@ -1,0 +1,7 @@
+cc_binary_host {
+    name: "res_packer",
+    srcs: [
+        "crc32.cpp",
+        "res_pack.cpp",
+    ],
+}
