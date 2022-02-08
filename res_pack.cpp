@@ -4,6 +4,7 @@
  * Copyright (C) 2012 Amlogic.
  * Elvis Yu <elvis.yu@amlogic.com>
  */
+#include <algorithm>
 #include "res_pack_i.h"
 
 #define COMPILE_TYPE_CHK(expr, t)       typedef char t[(expr) ? 1 : -1]
@@ -400,7 +401,7 @@ int res_img_unpack(const char* const path_src, const char* const unPackDirPath, 
                 for(unsigned itemTotalReadLen = 0; itemTotalReadLen < thisItemBodyOccupySz; )
                 {
                         const unsigned leftLen = thisItemBodyOccupySz - itemTotalReadLen;
-                        const unsigned thisReadSz = min(leftLen, ITEM_READ_BUF_SZ);
+                        const unsigned thisReadSz = std::min(leftLen, ITEM_READ_BUF_SZ);
 
                         unsigned actualReadSz = fread(itemReadBuf, 1, thisReadSz, fdResImg);
                         if(thisReadSz != actualReadSz){
