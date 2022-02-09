@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "704818de_ef5898d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-02-09T21:35:38Z",
+      "side": 1,
+      "message": "Nope: packer/linux_glibc_x86_64/obj/hardware/amlogic/tools/respacker/res_pack.o hardware/amlogic/tools/respacker/res_pack.cpp\nhardware/amlogic/tools/respacker/res_pack.cpp:404:58: error: expected unqualified-id\n                        const unsigned thisReadSz \u003d std::min(leftLen, ITEM_READ_BUF_SZ);\n                                                         ^\nhardware/amlogic/tools/respacker/res_pack_i.h:20:21: note: expanded from macro \u0027min\u0027",
+      "revId": "dfd923c104cdc6b2bd9207c2ff041fc045be474c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
